@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:koen/pages/main_page.dart';
+import 'package:koen/pages/sign/onboarding.dart';
+import 'package:koen/pages/sign/signin.dart';
+import 'package:koen/pages/sign/signup.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,6 +13,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MainPage(), theme: ThemeData());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Onboarding(),
+      theme: ThemeData(),
+    );
   }
 }

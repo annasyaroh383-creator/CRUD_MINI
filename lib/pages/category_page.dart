@@ -16,21 +16,6 @@ class _CategoryPageState extends State<categoryPage> {
   bool isExpense = true;
   final AppDatabase database = AppDatabase();
 
-  Future insert(String name, int type) async {
-    DateTime now = DateTime.now();
-    final row = await database
-        .into(database.category)
-        .insertReturning(
-          categoryPage.insert(
-            name: name,
-            type: type,
-            createdAt: now,
-            updatedAt: now,
-          ),
-        );
-    print(row);
-  }
-
   void openDialog() {
     showDialog(
       context: context,
@@ -55,12 +40,7 @@ class _CategoryPageState extends State<categoryPage> {
                     ),
                   ),
                   SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {
-                      insert("makan makan", 2);
-                    },
-                    child: Text("Save"),
-                  ),
+                  ElevatedButton(onPressed: () {}, child: Text("Save")),
                 ],
               ),
             ),
